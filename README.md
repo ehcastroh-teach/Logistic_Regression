@@ -20,8 +20,8 @@ This repository introduces logistic regression for multi-class classification us
 
 | File | Description |
 |------|-------------|
-| `hw-m140-logistic-reg-sklearn.ipynb` | Guided homework notebook - energy load classification and handwritten digit classification with fill-in exercises |
-| `nb-m140-logistic-reg-sklearn.ipynb` | Full teaching notebook - Iris species classification with decision boundary visualization and scaling comparison |
+| `logistic_regression_homework.ipynb` | Guided homework notebook - energy load classification and handwritten digit classification with fill-in exercises |
+| `logistic_regression_sklearn_lesson.ipynb` | Full teaching notebook - Iris species classification with decision boundary visualization and scaling comparison |
 | `Energy.csv` | 768 building configurations with 8 physical attributes (compactness, surface area, wall area, etc.) and heating load target |
 | `iris_classification.csv` | 150 Iris flower measurements (sepal length and width) labeled by species: setosa, versicolor, virginica |
 | `requirements.txt` | Python package dependencies |
@@ -82,7 +82,7 @@ Fit + compare accuracies across all four models
 
 Before fitting any model, you describe the data: ranges, null counts, and feature distributions. This step is not optional - you need to know whether features are on similar scales before deciding whether to scale them, and you need to catch nulls before they silently corrupt your model.
 
-The homework (`hw`) asks you to compute these statistics yourself using `DataFrame.describe` and `isnull`. The teaching notebook (`nb`) computes them automatically so you can see the expected output.
+The homework notebook asks you to compute these statistics yourself using `DataFrame.describe` and `isnull`. The lesson notebook computes them automatically so you can see the expected output.
 
 ### Part 2 - Converting regression to classification
 
@@ -134,13 +134,13 @@ cd Logistic_Regression
 pip install -r requirements.txt
 
 # Homework notebook (fill in the blanks)
-jupyter notebook hw-m140-logistic-reg-sklearn.ipynb
+jupyter notebook logistic_regression_homework.ipynb
 
 # Full teaching notebook (read-through with all code)
-jupyter notebook nb-m140-logistic-reg-sklearn.ipynb
+jupyter notebook logistic_regression_sklearn_lesson.ipynb
 ```
 
-Work through the homework top to bottom. Fill in `### YOUR CODE HERE ###` sections and run each cell to check your result. Refer to the teaching notebook if you want to see a worked example on a different dataset.
+Work through the homework notebook top to bottom. Fill in `### YOUR CODE HERE ###` sections and run each cell to check your result. Refer to the lesson notebook if you want to see a worked example on a different dataset.
 
 ---
 
