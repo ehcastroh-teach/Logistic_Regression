@@ -138,20 +138,27 @@ A model that never predicts class X has perfect precision (0 false positives) bu
 
 ## How to Run
 
+Prerequisites: [Nix](https://nixos.org/download) with flakes enabled.
+
+This repo's Python environment is fully project-local - a `flake.nix` devShell provides Python and `uv`, and `uv` installs every dependency pinned in `pyproject.toml`/`uv.lock` into a `.venv` inside this directory. Nothing is installed system-wide, and nothing here needs to be added to `home.nix` or `configuration.nix`.
+
 ```bash
 # Clone the repo
 git clone https://github.com/ehcastroh-teach/Logistic_Regression.git
 cd Logistic_Regression
 
-# Install dependencies
-pip install -r requirements.txt
+# Enter the project's dev shell - this also runs `uv sync` automatically
+# the first time, creating .venv with every pinned dependency installed
+nix develop
 
 # Homework notebook (fill in the blanks)
-jupyter notebook logistic_regression_homework.ipynb
+uv run jupyter notebook logistic_regression_homework.ipynb
 
 # Full teaching notebook (read-through with all code)
-jupyter notebook logistic_regression_sklearn_lesson.ipynb
+uv run jupyter notebook logistic_regression_sklearn_lesson.ipynb
 ```
+
+If you don't use Nix, any Python 3.12+ environment with `uv` installed works the same way: run `uv sync` in place of `nix develop` and use the `uv run ...` commands above unchanged.
 
 Work through the homework notebook top to bottom. Fill in `### YOUR CODE HERE ###` sections and run each cell to check your result against the expected output images in `assets/`. Refer to the lesson notebook if you want to see a worked example on a different dataset.
 
